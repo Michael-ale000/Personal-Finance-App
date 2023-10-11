@@ -1,0 +1,31 @@
+<!-- appname/templates/appname/stock_data.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Data</title>
+</head>
+<body>
+    <h1>Stock Data for AAPL</h1>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Open</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Close</th>
+            <!-- Add more columns if needed -->
+        </tr>
+        {% for row in data.iterrows %}
+            <tr>
+                <td>{{ row.1.name|date:"Y-m-d" }}</td>
+                <td>{{ row.1.Open }}</td>
+                <td>{{ row.1.High }}</td>
+                <td>{{ row.1.Low }}</td>
+                <td>{{ row.1.Close }}</td>
+                <!-- Add more columns if needed -->
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

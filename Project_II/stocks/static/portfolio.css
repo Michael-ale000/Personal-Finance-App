@@ -1,0 +1,274 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  color: #333;
+}
+
+.container {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  border-radius: 20px;
+}
+.income{
+    background-image: linear-gradient(to right, #16222A 0%, #3A6073  51%, #16222A  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+  .income:hover {
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+  }
+ .income h1{
+  color: white;
+ }
+ .expenditure{
+    background-image: linear-gradient(to right, #870000 0%, #190A05  51%, #870000  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .expenditure:hover {
+    background-position: right center; 
+    color: #fff;
+    text-decoration: none;
+  }
+
+ .expenditure h1{
+  color: white;
+ }
+
+.form-group {
+  margin: 15px 0;
+  padding: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+}
+
+#btn7 {
+  background-color: #dd1818dd;
+  color: #0d0808e1;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+ 
+}
+
+#btn7:hover {
+  background-color: #fc0101;
+  transform: scale(1.05);
+}
+#btn7 a{
+  color: #ccc;
+}
+/* CSS */
+.button-71 {
+  background-image: linear-gradient(to right, #1e3c72 0%, #2a5298  51%, #1e3c72  100%);
+  border: 0;
+  border-radius: 56px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  outline: 0;
+  padding: 16px 21px;
+  position: relative;
+  margin-left: -2%;
+  margin-top: 6%;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-71:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 92%;
+}
+
+.button-71:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .button-71 {
+    padding: 16px 48px;
+  }
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 56px;
+  background-color: #11101D;
+  color: whitesmoke;
+  border-top: 20px;
+}
+
+.form-button:before:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 92%;
+}
+
+.form-button:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .form-button {
+    padding: 16px 48px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: none;
+}
+
+.form-container {
+  position: relative;
+  background-color: #fff;
+  left: 35%;
+  top:25%;
+  transform: translate(-13%,-75%);
+  margin-bottom: 25px;
+  width: 35%;
+  height: 50%;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: none;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+}
+
+.form-container h2 {
+  margin: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Apply CSS styles to the table and table cells */
+
+.table-container {
+  margin: 20px auto;
+  width: 90%; /* Slightly wider table container */
+  max-width: 800px;
+  margin-left: 45px;
+}
+.styled-table {
+  border-collapse: collapse;
+  margin: 50px 400px;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 600px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+  background-color: #11101D;
+  color: #ffffff;
+  text-align: left;
+}
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #11101D;
+}
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}

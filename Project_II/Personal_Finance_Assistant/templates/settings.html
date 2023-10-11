@@ -1,0 +1,42 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+{%block title %}
+<link rel="stylesheet" href= '{% static "settings.css" %}'>
+<title>Settings</title>
+
+{% endblock title%}
+    
+{% block page_name %}Settings
+
+{% endblock page_name %}
+
+{% block content %}
+<div class="form-container" id="formContainer">
+    <form method = "POST" action= "{% url "settings" %}">
+        {% csrf_token %}
+        <h1>Change Password</h1>
+        {% for field in form %}
+          <label for="id_name">{{ field.label_tag }}</label>
+          {{ field }}
+          {% endfor %}
+          <br><br><button class='form-button' type="submit" role='button'>Submit</button><br><br>
+            </form>
+        </div>
+{% endblock content %}
+
+{% block script %}
+{% endblock script %}
+
+
+
+
+
+
+
+
+
+
+
+

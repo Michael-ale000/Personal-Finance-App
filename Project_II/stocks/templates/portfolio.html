@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+
+<link rel="stylesheet" href='{% static "portfolio.css" %}'>
+{% endblock title %}
+{% block page_name %}Portfolio{% endblock page_name %}
+
+{% block content %}
+<div class = 'container'>
+    <div class = 'income'>
+    <h1>{{ message }}</h1>
+    <h3>{{ amount }}</h3>
+</div>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th class="highlight">Stock Symbol</th>
+                <th class="highlight">Stock Name</th>
+                <th class="highlight">Quantity</th>
+                <th class="highlight">Buy Price</th>
+                <th class="highlight">Current Price</th>
+                <th class="highlight">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in data %}
+            <tr>
+                <td>{{ stock.stocksymbol }}</td>
+                <td>{{ stock.stockname }}</td>
+                <td>{{ stock.quantity }}</td>
+                <td>${{ stock.buy_price }}</td>
+                <td>${{ stock.current_price }}</td>
+                <td>
+                    <butto id = "btn7"><a href="{% url 'delete_portfolio' stock.pk %}">Delete</a> </button><!-- Link to delete view  income.pk is the primary key created by deafult-->
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <button class="button-71" role="button" id ='showFormButton'>Add New Stocks</button>
+    <div class="overlay" id="overlay"></div>
+    <div class="form-container" id="formContainer">
+        <form method = "POST" action= "{% url "portfolio" %}">
+            {% csrf_token %}
+            <h2>Portfolio</h2>
+            {% for field in form %}
+      <label for="id_name">{{ field.label_tag }}</label>
+      {{ field }}
+      {% endfor %}
+      <br><button class='form-button' type="submit" role='button'>Submit</button><br><br>
+        </form>
+        <button id="closeFormButton" class='form-button' role='button' style='background-color:red'>Close</button>
+    </div>
+
+{% endblock content %}
+
+
+{% block script %}
+ <script>
+  const showFormButton = document.getElementById("showFormButton");
+  const formContainer = document.getElementById("formContainer");
+  const overlay = document.getElementById("overlay");
+  const closeFormButton = document.getElementById("closeFormButton");
+  
+  showFormButton.addEventListener("click", () => {
+      formContainer.style.display = "block";
+      overlay.style.display = "block";
+  });
+  
+  closeFormButton.addEventListener("click", () => {
+      formContainer.style.display = "none";
+      overlay.style.display = "none";
+  });
+  
+  // Optional: Close the form if the user clicks outside of it
+  overlay.addEventListener("click", () => {
+      formContainer.style.display = "none";
+      overlay.style.display = "none";
+  });
+  
+
+ </script>
+
+
+ {% endblock script %}

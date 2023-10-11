@@ -1,0 +1,80 @@
+<!-- filtered_stocks.html -->
+<!-- templates/filtered_stocks.html -->
+
+{% extends "base.html" %}
+{% load static %}
+{%block title %}
+<link rel="stylesheet" href= '{% static "stock_chart_real.css" %}'>
+<title>Filtered Stocks</title>
+
+{% endblock title%}
+    
+{% block page_name %}
+
+{% endblock page_name %}
+
+{% block content %}
+<h1>Filtered Stocks</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>P/E Ratio</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for stock in filtered_stock %}
+        <tr>
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.shortName }}</td>
+            <td>{{ stock.trailingPE }}</td>
+            <td>{{ stock.regularMarketPreviousClose }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No matching stocks found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
+
+{% block script %}
+{% endblock script %}
+
+
+
+
+
+
+
+
+
+{% comment %} <h1>Filtered Stocks</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>P/E Ratio</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for stock in filtered_stock %}
+        <tr>
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.shortName }}</td>
+            <td>{{ stock.trailingPE }}</td>
+            <td>{{ stock.regularMarketPreviousClose }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No matching stocks found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table> {% endcomment %}

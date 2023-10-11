@@ -1,0 +1,55 @@
+{% extends 'reusablenavbar.html' %}
+{% load static %}
+
+{%block title %}
+<link rel="stylesheet" href= '{% static "land.css" %}'>
+{% endblock title %}
+{% block page_name %}Welcome To Personal Finance Assistant{% endblock page_name %}
+{%block content%}
+<h1>Market Summary</h1>
+    <table>
+        <tr>
+            <th>Attribute</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Market Index Name</td>
+            <td>S&P 500 </td>
+        </tr>
+        <tr>
+            <td>Current Index</td>
+            <td>{{ current_price }}</td>
+        </tr>
+        <tr>
+            <td>Previous Close</td>
+            <td>{{ previous_close }}</td>
+        </tr>
+        <tr>
+            <td>Change</td>
+            <td>{{ percentage_change }}%</td>
+        </tr>
+        <tr>
+            <td>Volume Traded</td>
+            <td>{{ traded_volume }}</td>
+        </tr>
+        <tr>
+            <td>High</td>
+            <td>{{ high_price }}</td>
+        </tr>
+        <tr>
+            <td>Low</td>
+            <td>{{ low_price }}</td>
+        </tr>
+    </table>
+    <h1>S&P 500 Index Chart</h1>
+    <div id="sp500-chart">
+        {{ plot_div2|safe }}
+    </div>
+    
+
+{% endblock content %}
+
+{% block script %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock script %}
+

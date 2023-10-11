@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Personal Finance Assistant</title>
+    <link rel="stylesheet" href='{% static "base.css" %}' />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {%block title %}
+    {% endblock title%}
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class="bx bx-money icon" ></i>
+        <div class="logo_name">Personal Finance Assistant</div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+
+        <li>
+          <a href="{% url "landing" %}">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Home</span>
+          </a>
+          <span class="tooltip">Home</span>
+        </li>
+        <li>
+          <a href="{%url 'portfolio' %}">
+            <i class="bx bx-user"></i>
+            <span class="links_name">Portfolio</span>
+          </a>
+          <span class="tooltip">Portfolio</span>
+        </li>
+        <li>
+          <a href="{% url "streamlit" %}">
+            <i class="bx bx-pie-chart-alt-2"></i>
+            <span class="links_name">Analytics</span>
+          </a>
+          <span class="tooltip">Analytics</span>
+        </li>
+        <li>
+          <a href="{% url 'income_expenses' %}">
+            <i class="bx bx-wallet"></i>
+            <span class="links_name">Income & Expenses</span>
+          </a>
+          <span class="tooltip">Income & Expenses</span>
+        </li>
+        <li>
+
+        <a href="{% url 'filterstocks' %}">
+          <i class="bx bx-search-alt"></i>
+          <span class="links_name">Screener</span>
+        </a>
+        <span class="tooltip">Screener</span>
+      </li>
+        <li>
+          <a href="{% url "settings" %}">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Settings</span>
+          </a>
+          <span class="tooltip">Settings</span>
+        </li>
+        <li>
+          <a href="{% url "logout" %}">
+            <i class="bx bx-log-out" id="log_out"></i>
+            <span class="links_name">LogOut</span>
+          </a>
+          <span class="tooltip">LogOut</span>
+        </li>
+        
+          
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <div class="text"> {% block page_name %}{% endblock page_name %}</div>
+      {% block content %}
+      {% endblock content %}
+
+      
+    </section>
+    {% block script %}{% endblock script %}
+    <script src="{% static "script.js" %}"></script>
+  </body>
+</html>
